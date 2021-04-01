@@ -46,7 +46,7 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           <Container>
-            <Row xs={12} md={8} lg={20}>
+            <Row xs={12} md={8}>
               {success ? (
                 <Form.Control
                   label="title"
@@ -58,7 +58,7 @@ function MyVerticallyCenteredModal(props) {
                 <h4>{props.title}</h4>
               )}
             </Row>
-            <Row xs={8} md={4}>
+            <Row xs={8} md={4} lg={2}>
               {success ? (
                 <Form.Control
                   label="title"

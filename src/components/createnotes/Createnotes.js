@@ -38,7 +38,9 @@ function Createnotes() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(uuid(), Title, Description, Time);
-    let newDate = `${Time.getDate()}-${Time.getMonth()}-${Time.getUTCFullYear()}`;
+    let newDate = `${Time.getDate()}-${
+      Time.getMonth() + 1
+    }-${Time.getUTCFullYear()}`;
     dispatch(
       addToDo({
         id: uuid(),

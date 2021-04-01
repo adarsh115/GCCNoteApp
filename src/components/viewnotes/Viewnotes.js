@@ -43,14 +43,10 @@ function Viewnotes() {
               key={id}
             >
               <>
-                <Col
-                  onClick={() => setModalShow(true)}
-                  style={titleColumn}
-                  lg={10}
-                >
+                <Col style={titleColumn} lg={10}>
                   {/* Row inside column */}
                   <Row className="d-flex justify-content-flex-end">
-                    <Col sm={10} lg={10}>
+                    <Col onClick={() => setModalShow(true)} sm={10} lg={10}>
                       <h5>{title}</h5>
                     </Col>
                     <Col sm={2} lg={1}>
