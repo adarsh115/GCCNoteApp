@@ -8,17 +8,18 @@ import { addToDo } from "../../redux/actions";
 
 import uuid from "react-uuid";
 import { useDispatch } from "react-redux";
-
+const currentDate = new Date();
 function Createnotes() {
   const [open, setOpen] = useState(false);
   const [Title, setTitle] = useState("");
   const [Description, setDescription] = useState("");
-  const [Time, setTime] = useState(new Date());
+  const [Time, setTime] = useState(currentDate);
 
   let dispatch = useDispatch();
 
   const handleDateTime = (e) => {
     setTime(e);
+    console.log(`${e.getDate()}-${e.getMonth()}-${e.getUTCFullYear()}`);
   };
 
   const handleTitle = (e) => {
@@ -31,17 +32,18 @@ function Createnotes() {
   const handleDiscard = () => {
     setTitle("");
     setDescription("");
-    setTime(new Date());
+    setTime(currentDate);
     setOpen(false);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(uuid(), Title, Description, Time);
+    let newDate = `${Time.getDate()}-${Time.getMonth()}-${Time.getUTCFullYear()}`;
     dispatch(
       addToDo({
         id: uuid(),
         title: Title,
-        datetime: Time,
+        datetime: newDate,
         description: Description,
       })
     );
@@ -80,12 +82,12 @@ function Createnotes() {
             }}
           >
             <DateTimePicker
-              onChange={handleDateTime}
               value={Time}
               name="datetime"
               disableClock={true}
               calendarIcon={null}
               format="dd-MM-y"
+              onChange={handleDateTime}
               closeWidgets={false}
             />
           </div>

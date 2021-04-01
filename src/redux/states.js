@@ -1,20 +1,16 @@
 export let todos = [
   {
-    id: "3847",
-    title: "this is note one",
-    datetime: "12312414",
-    description: "this is description 1",
+    id: "322",
+    title: "I AM DUMMY NOTE ONE",
+    datetime: "3-3-2021",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
-    id: "384734",
-    title: "This is note 2",
-    datetime: "983123554",
-    description: "this is description 2",
-  },
-  {
-    id: "384345",
-    title: "This is note 2",
-    datetime: "54472414",
-    description: "this is description 3",
+    id: "322",
+    title: "I AM DUMMY NOTE TWWO",
+    datetime: "22-11-2020",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
 ];
