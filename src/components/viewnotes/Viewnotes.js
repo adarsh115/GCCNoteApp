@@ -60,18 +60,17 @@ function Viewnotes() {
                         {datetime}
                       </p>
                     </Col>
+                    <MyVerticallyCenteredModal
+                      id={id}
+                      show={modalShow}
+                      onDelete={() => dispatch(deleteToDo(id))}
+                      onHide={() => setModalShow(false)}
+                      title={title}
+                      datetime={datetime}
+                      description={description}
+                    />
                   </Row>
                 </Col>
-
-                <MyVerticallyCenteredModal
-                  id={id}
-                  show={modalShow}
-                  onDelete={() => dispatch(deleteToDo(id))}
-                  onHide={() => setModalShow(false)}
-                  title={title}
-                  datetime={datetime}
-                  description={description}
-                />
               </>
             </Row>
           </Container>
