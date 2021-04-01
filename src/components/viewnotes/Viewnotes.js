@@ -42,40 +42,39 @@ function Viewnotes() {
               className="d-flex justify-content-center align-items-center"
               key={id}
             >
-              <>
-                <Col style={titleColumn} lg={10}>
-                  {/* Row inside column */}
-                  <Row className="d-flex justify-content-flex-end">
-                    <Col onClick={() => setModalShow(true)} sm={10} lg={10}>
-                      <h5>{title}</h5>
-                    </Col>
-                    <Col sm={2} lg={1}>
-                      <p
-                        style={{
-                          fontSize: "80%",
-                          color: "#2F4F4F",
-                          fontWeight: "600",
-                        }}
-                      >
-                        {datetime}
-                      </p>
-                    </Col>
-                    <MyVerticallyCenteredModal
-                      id={id}
-                      show={modalShow}
-                      onDelete={() => dispatch(deleteToDo(id))}
-                      onHide={() => setModalShow(false)}
-                      title={title}
-                      datetime={datetime}
-                      description={description}
-                    />
-                  </Row>
-                </Col>
-              </>
+              <Col style={titleColumn} lg={10}>
+                {/* Row inside column */}
+                <Row className="d-flex justify-content-flex-end">
+                  <Col onClick={() => setModalShow(true)} sm={10} lg={10}>
+                    <h5>{title}</h5>
+                  </Col>
+                  <Col sm={2} lg={1}>
+                    <p
+                      style={{
+                        fontSize: "80%",
+                        color: "#2F4F4F",
+                        fontWeight: "600",
+                      }}
+                    >
+                      {datetime}
+                    </p>
+                  </Col>
+                </Row>
+              </Col>
             </Row>
+            <MyVerticallyCenteredModal
+              id={id}
+              show={modalShow}
+              onDelete={() => dispatch(deleteToDo(id))}
+              onHide={() => setModalShow(false)}
+              title={title}
+              datetime={datetime}
+              description={description}
+            />
           </Container>
         );
       })}
+
       {/*  */}
     </Col>
   );
